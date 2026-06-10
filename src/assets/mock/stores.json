@@ -1,0 +1,20 @@
+[
+  {
+    "id": "recife-centro",
+    "name": "Recife - Centro",
+    "city": "Recife",
+    "address": "Rua da Aurora, 123"
+  },
+  {
+    "id": "recife-boa-viagem",
+    "name": "Recife - Boa Viagem",
+    "city": "Recife",
+    "address": "Av. Boa Viagem, 456"
+  },
+  {
+    "id": "olinda-historico",
+    "name": "Olinda - Histórico",
+    "city": "Olinda",
+    "address": "Rua do Amparo, 78"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "storeId": "recife-centro",
+    "items": [
+      { "productId": "tapioca-carne-seca", "price": 18.9 },
+      { "productId": "tapioca-coco", "price": 12.9 },
+      { "productId": "tapioca-frango", "price": 15.9 },
+      { "productId": "cuscuz-milho", "price": 14.9 },
+      { "productId": "cuscuz-charque", "price": 18.9 },
+      { "productId": "cuscuz-coco", "price": 13.9 },
+      { "productId": "caldo-de-cana", "price": 6.9 },
+      { "productId": "suco-caju", "price": 8.9 },
+      { "productId": "agua-coco", "price": 7.9 }
+    ]
+  },
+  {
+    "storeId": "recife-boa-viagem",
+    "items": [
+      { "productId": "tapioca-carne-seca", "price": 19.9 },
+      { "productId": "tapioca-coco", "price": 13.5 },
+      { "productId": "tapioca-frango", "price": 16.5 },
+      { "productId": "cuscuz-milho", "price": 15.5 },
+      { "productId": "cuscuz-charque", "price": 19.5 },
+      { "productId": "cuscuz-coco", "price": 14.5 },
+      { "productId": "caldo-de-cana", "price": 7.5 },
+      { "productId": "suco-caju", "price": 9.5 },
+      { "productId": "agua-coco", "price": 8.5 }
+    ]
+  },
+  {
+    "storeId": "olinda-historico",
+    "items": [
+      { "productId": "tapioca-carne-seca", "price": 17.9 },
+      { "productId": "tapioca-coco", "price": 11.9 },
+      { "productId": "tapioca-frango", "price": 14.9 },
+      { "productId": "cuscuz-milho", "price": 13.9 },
+      { "productId": "cuscuz-charque", "price": 17.9 },
+      { "productId": "cuscuz-coco", "price": 12.9 },
+      { "productId": "caldo-de-cana", "price": 5.9 },
+      { "productId": "suco-caju", "price": 7.9 },
+      { "productId": "agua-coco", "price": 6.9 }
+    ]
+  }
+]

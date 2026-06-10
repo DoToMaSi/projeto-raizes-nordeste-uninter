@@ -1,0 +1,145 @@
+[
+  {
+    "id": "tapioca-carne-seca",
+    "name": "Tapioca de Carne Seca",
+    "description": "Tapioca tradicional recheada com carne seca desfiada e queijo coalho.",
+    "category": "tapiocas",
+    "basePrice": 16.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 3 },
+      { "id": "g", "name": "Grande", "price": 6 }
+    ],
+    "addons": [
+      { "id": "queijo", "name": "Queijo extra", "price": 2.5 },
+      { "id": "carne-seca", "name": "Carne seca extra", "price": 4 }
+    ]
+  },
+  {
+    "id": "tapioca-coco",
+    "name": "Tapioca de Coco",
+    "description": "Tapioca doce com coco fresco ralado.",
+    "category": "tapiocas",
+    "basePrice": 12.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 2 },
+      { "id": "g", "name": "Grande", "price": 4 }
+    ],
+    "addons": [
+      { "id": "leite-condensado", "name": "Leite condensado", "price": 2 },
+      { "id": "geleia", "name": "Geleia de mocotó", "price": 3 }
+    ]
+  },
+  {
+    "id": "tapioca-frango",
+    "name": "Tapioca de Frango",
+    "description": "Frango desfiado temperado com catupiry.",
+    "category": "tapiocas",
+    "basePrice": 15.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 3 },
+      { "id": "g", "name": "Grande", "price": 5 }
+    ],
+    "addons": [
+      { "id": "queijo", "name": "Queijo extra", "price": 2.5 },
+      { "id": "catupiry", "name": "Catupiry extra", "price": 3 }
+    ]
+  },
+  {
+    "id": "cuscuz-milho",
+    "name": "Cuscuz de Milho",
+    "description": "Cuscuz nordestino com manteiga de garrafa.",
+    "category": "cuscuz",
+    "basePrice": 14.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 2.5 },
+      { "id": "g", "name": "Grande", "price": 5 }
+    ],
+    "addons": [
+      { "id": "ovo", "name": "Ovo frito", "price": 2 },
+      { "id": "queijo", "name": "Queijo coalho", "price": 3 }
+    ]
+  },
+  {
+    "id": "cuscuz-charque",
+    "name": "Cuscuz com Charque",
+    "description": "Cuscuz servido com charque refogado e cebola.",
+    "category": "cuscuz",
+    "basePrice": 18.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 3 },
+      { "id": "g", "name": "Grande", "price": 6 }
+    ],
+    "addons": [
+      { "id": "charque", "name": "Charque extra", "price": 4 },
+      { "id": "pimenta", "name": "Pimenta de cheiro", "price": 1 }
+    ]
+  },
+  {
+    "id": "cuscuz-coco",
+    "name": "Cuscuz Doce de Coco",
+    "description": "Cuscuz doce com coco e canela.",
+    "category": "cuscuz",
+    "basePrice": 13.9,
+    "sizes": [
+      { "id": "p", "name": "Pequena", "price": 0 },
+      { "id": "m", "name": "Média", "price": 2 },
+      { "id": "g", "name": "Grande", "price": 4 }
+    ],
+    "addons": [
+      { "id": "leite-condensado", "name": "Leite condensado", "price": 2 },
+      { "id": "coco", "name": "Coco extra", "price": 2.5 }
+    ]
+  },
+  {
+    "id": "caldo-de-cana",
+    "name": "Caldo de Cana",
+    "description": "Caldo de cana natural gelado ou quente.",
+    "category": "bebidas",
+    "basePrice": 6.9,
+    "sizes": [
+      { "id": "300ml", "name": "300ml", "price": 0 },
+      { "id": "500ml", "name": "500ml", "price": 2 },
+      { "id": "700ml", "name": "700ml", "price": 4 }
+    ],
+    "addons": [
+      { "id": "limao", "name": "Limão", "price": 0.5 },
+      { "id": "gelo", "name": "Gelo extra", "price": 0 }
+    ]
+  },
+  {
+    "id": "suco-caju",
+    "name": "Suco de Caju",
+    "description": "Suco natural de caju, sem conservantes.",
+    "category": "bebidas",
+    "basePrice": 8.9,
+    "sizes": [
+      { "id": "300ml", "name": "300ml", "price": 0 },
+      { "id": "500ml", "name": "500ml", "price": 2.5 },
+      { "id": "700ml", "name": "700ml", "price": 4.5 }
+    ],
+    "addons": [
+      { "id": "sem-acucar", "name": "Sem açúcar", "price": 0 },
+      { "id": "gelo", "name": "Gelo extra", "price": 0 }
+    ]
+  },
+  {
+    "id": "agua-coco",
+    "name": "Água de Coco",
+    "description": "Água de coco verde gelada.",
+    "category": "bebidas",
+    "basePrice": 7.9,
+    "sizes": [
+      { "id": "300ml", "name": "300ml", "price": 0 },
+      { "id": "500ml", "name": "500ml", "price": 2 },
+      { "id": "700ml", "name": "700ml", "price": 3.5 }
+    ],
+    "addons": [
+      { "id": "gelo", "name": "Gelo extra", "price": 0 }
+    ]
+  }
+]
