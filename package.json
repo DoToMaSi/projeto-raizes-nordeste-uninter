@@ -9,11 +9,12 @@
   "bugs": {
     "url": "https://github.com/DoToMaSi/projeto-raizes-nordeste-uninter/issues"
   },
-  "homepage": "https://github.com/DoToMaSi/projeto-raizes-nordeste-uninter#readme",
+  "homepage": "https://dotomasi.github.io/projeto-raizes-nordeste-uninter/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:pages": "ng build --configuration=github-pages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

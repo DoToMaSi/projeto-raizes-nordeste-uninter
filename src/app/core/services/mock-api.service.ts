@@ -15,15 +15,15 @@ export class MockApiService {
   private readonly registeredUsers = signal<User[]>(this.loadRegisteredUsers());
 
   async getStores(): Promise<Store[]> {
-    return firstValueFrom(this.http.get<Store[]>('/assets/mock/stores.json'));
+    return firstValueFrom(this.http.get<Store[]>('assets/mock/stores.json'));
   }
 
   async getProducts(): Promise<Product[]> {
-    return firstValueFrom(this.http.get<Product[]>('/assets/mock/products.json'));
+    return firstValueFrom(this.http.get<Product[]>('assets/mock/products.json'));
   }
 
   async getMenus(): Promise<StoreMenu[]> {
-    return firstValueFrom(this.http.get<StoreMenu[]>('/assets/mock/menus.json'));
+    return firstValueFrom(this.http.get<StoreMenu[]>('assets/mock/menus.json'));
   }
 
   async getMenuByStoreId(storeId: string): Promise<{ products: MenuProduct[]; menu: StoreMenu } | null> {
@@ -45,13 +45,13 @@ export class MockApiService {
   }
 
   async emailExists(email: string): Promise<boolean> {
-    const seedUsers = await firstValueFrom(this.http.get<User[]>('/assets/mock/users.json'));
+    const seedUsers = await firstValueFrom(this.http.get<User[]>('assets/mock/users.json'));
     const allUsers = [...seedUsers, ...this.registeredUsers()];
     return allUsers.some((entry) => entry.email.toLowerCase() === email.toLowerCase());
   }
 
   async login(email: string, password: string): Promise<User | null> {
-    const seedUsers = await firstValueFrom(this.http.get<User[]>('/assets/mock/users.json'));
+    const seedUsers = await firstValueFrom(this.http.get<User[]>('assets/mock/users.json'));
     const allUsers = [...seedUsers, ...this.registeredUsers()];
     const user = allUsers.find(
       (entry) => entry.email.toLowerCase() === email.toLowerCase() && entry.password === password
