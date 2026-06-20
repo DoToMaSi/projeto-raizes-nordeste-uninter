@@ -12,7 +12,7 @@ import { CartService } from '../../core/services/cart.service';
     <div class="bg-base-200 flex min-h-screen flex-col">
       <div class="navbar bg-primary text-primary-content sticky top-0 z-40 shadow-md">
         <div class="flex-1">
-          <a routerLink="/" class="btn btn-ghost text-xl min-h-11">Raízes do Nordeste</a>
+          <a routerLink="/auth/login" class="btn btn-ghost text-xl min-h-11">Raízes do Nordeste</a>
         </div>
 
         <div class="hidden flex-none gap-1 md:flex">

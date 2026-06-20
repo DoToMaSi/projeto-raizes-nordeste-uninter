@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { authGuard } from './core/guards/auth.guard';
+import { homeRedirectGuard } from './core/guards/home-redirect.guard';
 import { lgpdGuard } from './core/guards/lgpd.guard';
 import { storeGuard } from './core/guards/store.guard';
 import { AppShellComponent } from './shared/components/app-shell.component';
@@ -28,17 +29,20 @@ export const routes: Routes = [
     path: '',
     component: AppShellComponent,
     children: [
-      { path: '', redirectTo: 'loja', pathMatch: 'full' },
+      {
+        path: '',
+        pathMatch: 'full',
+        canActivate: [homeRedirectGuard],
+        children: []
+      },
       {
         path: 'auth/login',
-        loadComponent: () => import('./features/auth/login.component').then((m) => m.LoginComponent),
-        canActivate: [lgpdGuard]
+        loadComponent: () => import('./features/auth/login.component').then((m) => m.LoginComponent)
       },
       {
         path: 'auth/register',
         loadComponent: () =>
-          import('./features/auth/register.component').then((m) => m.RegisterComponent),
-        canActivate: [lgpdGuard]
+          import('./features/auth/register.component').then((m) => m.RegisterComponent)
       },
       {
         path: 'loja',
@@ -72,5 +76,5 @@ export const routes: Routes = [
       }
     ]
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'auth/login' }
 ];

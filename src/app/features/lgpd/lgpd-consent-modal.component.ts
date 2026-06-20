@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { LgpdService } from '../../core/services/lgpd.service';
 
@@ -10,33 +11,33 @@ import { LgpdService } from '../../core/services/lgpd.service';
   template: `
     @if (!lgpdService.hasRequiredConsent()) {
       <dialog class="modal modal-open" open>
-        <div class="modal-box max-w-lg">
+        <div class="modal-box max-w-lg overflow-x-hidden">
           <h2 class="text-lg font-bold">Privacidade e LGPD</h2>
-          <p class="py-4 text-sm">
+          <p class="break-words py-4 text-sm">
             Utilizamos seus dados para processar pedidos e melhorar sua experiência. Leia nossa
             política de privacidade e confirme seu consentimento para continuar.
           </p>
 
           <form class="flex flex-col gap-4" [formGroup]="form" (ngSubmit)="accept()">
-            <label class="label cursor-pointer justify-start gap-3">
+            <label class="flex cursor-pointer items-start gap-3">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary min-h-11 min-w-11"
+                class="checkbox checkbox-primary mt-1 h-11 w-11 shrink-0"
                 formControlName="dataProcessing"
               />
-              <span class="label-text">
+              <span class="min-w-0 flex-1 text-sm leading-snug">
                 Autorizo o tratamento dos meus dados pessoais para processamento de pedidos
                 <span class="text-error">*</span>
               </span>
             </label>
 
-            <label class="label cursor-pointer justify-start gap-3">
+            <label class="flex cursor-pointer items-start gap-3">
               <input
                 type="checkbox"
-                class="checkbox checkbox-primary min-h-11 min-w-11"
+                class="checkbox checkbox-primary mt-1 h-11 w-11 shrink-0"
                 formControlName="marketing"
               />
-              <span class="label-text">
+              <span class="min-w-0 flex-1 text-sm leading-snug">
                 Desejo receber ofertas e novidades por e-mail (opcional)
               </span>
             </label>
@@ -61,6 +62,7 @@ import { LgpdService } from '../../core/services/lgpd.service';
 export class LgpdConsentModalComponent {
   protected readonly lgpdService = inject(LgpdService);
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
 
   protected readonly form = this.fb.nonNullable.group({
     dataProcessing: [false, Validators.requiredTrue],
@@ -78,5 +80,8 @@ export class LgpdConsentModalComponent {
 
     const { dataProcessing, marketing } = this.form.getRawValue();
     this.lgpdService.acceptConsent(dataProcessing, marketing);
+
+    const target = this.router.url === '/' || this.router.url === '' ? '/auth/login' : this.router.url;
+    void this.router.navigateByUrl(target);
   }
 }
