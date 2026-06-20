@@ -1,59 +1,196 @@
-# ProjetoRaizesNordesteUninter
+# Raízes do Nordeste
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Front-end de um sistema de franquia de alimentação nordestina, desenvolvido como projeto acadêmico. A aplicação simula um canal de pedidos multiplataforma (Web, Mobile e Totem) com autenticação, cardápio dinâmico por loja, carrinho, fidelidade, pagamento externo mockado e acompanhamento de pedidos.
 
-## Development server
+**Demo ao vivo:** [https://dotomasi.github.io/projeto-raizes-nordeste-uninter/](https://dotomasi.github.io/projeto-raizes-nordeste-uninter/)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## GitHub
+
+| Recurso | URL |
+| --- | --- |
+| Repositório | [github.com/DoToMaSi/projeto-raizes-nordeste-uninter](https://github.com/DoToMaSi/projeto-raizes-nordeste-uninter) |
+| GitHub Pages | [dotomasi.github.io/projeto-raizes-nordeste-uninter](https://dotomasi.github.io/projeto-raizes-nordeste-uninter/) |
+| Issues | [github.com/DoToMaSi/projeto-raizes-nordeste-uninter/issues](https://github.com/DoToMaSi/projeto-raizes-nordeste-uninter/issues) |
+
+**Autor:** Douglas Tomacheski de Abreu e Silva — [dotomasi@outlook.com](mailto:dotomasi@outlook.com)
+
+---
+
+## Funcionalidades
+
+| ID | Descrição |
+| --- | --- |
+| **FR01** | Cadastro, login e consentimento LGPD antes da coleta de dados |
+| **FR02** | Seleção de loja com cardápio e preços dinâmicos por unidade |
+| **FR03** | Navegação no cardápio, personalização de itens e carrinho reativo |
+| **FR04** | Programa de fidelidade — pontos convertidos em desconto no checkout |
+| **FR05** | Fluxo de pagamento desacoplado com gateway externo simulado |
+| **FR06** | Acompanhamento de pedido em tempo real simulado (Recebido → Cozinha → Pronto) |
+
+### Fluxo principal
+
+1. Aceitar o modal de privacidade (LGPD)
+2. Fazer login ou cadastro
+3. Escolher a loja (ex.: Recife - Centro)
+4. Navegar pelo cardápio (Tapiocas, Cuscuz, Bebidas)
+5. Personalizar item e adicionar ao carrinho
+6. Finalizar pedido com opção de usar pontos de fidelidade
+7. Pagar via gateway mockado externo
+8. Acompanhar status do pedido na timeline
+
+### Conta demo
+
+| Campo | Valor |
+| --- | --- |
+| E-mail | `maria@email.com` |
+| Senha | `123456` |
+| Pontos | 500 (equivale a R$ 5,00 de desconto) |
+
+---
+
+## Stack tecnológica
+
+- **Angular 20** — componentes standalone, zoneless change detection
+- **Angular Signals** — `signal`, `computed`, `effect`, `input`, `output`
+- **Injeção moderna** — `inject()` em serviços e componentes
+- **Control flow nativo** — `@if`, `@for`, `@switch`
+- **Tailwind CSS v4** — estilização via utility classes
+- **daisyUI** — componentes semânticos (`btn`, `card`, `modal`, `navbar`, `steps`, etc.)
+- **Reactive Forms** — formulários reativos
+- **Mock data** — JSON local simulando backend (`src/assets/mock/`)
+
+---
+
+## Arquitetura
+
+```
+src/app/
+├── core/
+│   ├── models/       # User, Store, Product, CartItem, Order, LgpdConsent
+│   ├── guards/       # lgpd, auth, store, home-redirect
+│   └── services/     # Auth, Cart, Menu, Order, Payment, Loyalty, etc.
+├── features/
+│   ├── lgpd/         # Modal de consentimento
+│   ├── auth/         # Login e cadastro
+│   ├── store/        # Seleção de loja
+│   ├── menu/         # Cardápio e personalização
+│   ├── cart/         # Carrinho e checkout
+│   ├── payment/      # Gateway mockado externo
+│   └── order/        # Acompanhamento de pedido
+└── shared/
+    └── components/   # App shell (navbar + bottom nav)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Estado global gerenciado por serviços singleton com Signals (`providedIn: 'root'`). Dados mockados carregados via `HttpClient` a partir de arquivos JSON.
 
-## Code scaffolding
+### Rotas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Rota | Descrição |
+| --- | --- |
+| `/auth/login` | Login |
+| `/auth/register` | Cadastro |
+| `/loja` | Seleção de loja |
+| `/cardapio` | Cardápio da loja selecionada |
+| `/carrinho` | Carrinho de compras |
+| `/checkout` | Finalização com fidelidade |
+| `/pagamento/:orderId/aguardando` | Aguardando redirecionamento |
+| `/pagamento/:orderId/gateway` | Gateway externo simulado |
+| `/pagamento/:orderId/callback` | Retorno do pagamento |
+| `/pedido/:orderId` | Timeline do pedido |
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Pré-requisitos
 
-```bash
-ng generate --help
-```
+- [Node.js](https://nodejs.org/) 22+
+- npm 10+
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Desenvolvimento local
 
 ```bash
-ng test
+# Clonar o repositório
+git clone https://github.com/DoToMaSi/projeto-raizes-nordeste-uninter.git
+cd projeto-raizes-nordeste-uninter
+
+# Instalar dependências
+npm ci
+
+# Servidor de desenvolvimento
+npm start
 ```
 
-## Running end-to-end tests
+Acesse [http://localhost:4200](http://localhost:4200). A aplicação recarrega automaticamente ao salvar alterações.
 
-For end-to-end (e2e) testing, run:
+### Scripts disponíveis
 
-```bash
-ng e2e
+| Script | Comando | Descrição |
+| --- | --- | --- |
+| `start` | `npm start` | Servidor de desenvolvimento |
+| `build` | `npm run build` | Build de produção |
+| `build:pages` | `npm run build:pages` | Build otimizado para GitHub Pages |
+| `test` | `npm test` | Testes unitários (Karma + Jasmine) |
+| `watch` | `npm run watch` | Build contínuo em modo development |
+
+---
+
+## CI/CD
+
+O projeto usa GitHub Actions com dois fluxos separados por branch:
+
+### CI — branch `develop`
+
+Arquivo: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+
+- Dispara em **push** e **pull requests** para `develop`
+- Executa testes e build padrão
+- Uso: desenvolvimento e validação contínua
+
+### Deploy — branch `master`
+
+Arquivo: [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml)
+
+- Dispara apenas em **push** para `master` (ou manualmente via `workflow_dispatch`)
+- Executa testes → build com `baseHref` para GitHub Pages → deploy
+- Publica em: **https://dotomasi.github.io/projeto-raizes-nordeste-uninter/**
+
+### Fluxo de branches recomendado
+
+```
+develop  →  commits diários, CI automático
+   ↓
+master   →  merge para release, deploy automático no GitHub Pages
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+> **Configuração única no GitHub:** em *Settings → Pages*, selecione **GitHub Actions** como source.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Lojas e cardápio mock
+
+Três unidades disponíveis com preços distintos:
+
+- Recife - Centro
+- Recife - Boa Viagem
+- Olinda - Histórico
+
+Categorias: **Tapiocas**, **Cuscuz**, **Bebidas** — cada produto suporta tamanho (P/M/G) e adicionais.
+
+Arquivos de dados em [`src/assets/mock/`](src/assets/mock/).
+
+---
+
+## Requisitos não funcionais
+
+- **Mobile-first** — layout responsivo com bottom nav no mobile e navbar no desktop/tablet
+- **Acessibilidade** — alvos de toque ≥ 44×44 px, contraste via tema daisyUI
+- **Performance** — estado derivado via `computed()`, sem subscriptions RxJS desnecessárias
+
+---
+
+## Licença
+
+Projeto privado (`"private": true`). Todos os direitos reservados ao autor.
