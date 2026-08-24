@@ -1,0 +1,23 @@
+[
+  {
+    "id": "promo-combo-cuscuz",
+    "title": "Combo Cuscuz + Suco",
+    "description": "Cuscuz recheado com calabresa e suco natural de maracujá por preço especial.",
+    "badge": "Destaque",
+    "storeIds": ["recife-centro", "recife-boa-viagem", "olinda-historico"]
+  },
+  {
+    "id": "promo-tapioca-dia",
+    "title": "Tapioca do Dia",
+    "description": "Tapioca de queijo coalho com 15% de desconto na unidade selecionada.",
+    "badge": "Hoje",
+    "storeIds": ["recife-centro", "olinda-historico"]
+  },
+  {
+    "id": "promo-fidelidade",
+    "title": "Dobro de Pontos",
+    "description": "Ganhe pontos em dobro em pedidos acima de R$ 30,00 nesta semana.",
+    "badge": "Fidelidade",
+    "storeIds": ["recife-boa-viagem", "olinda-historico"]
+  }
+]
