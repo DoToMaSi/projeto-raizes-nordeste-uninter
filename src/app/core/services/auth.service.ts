@@ -46,8 +46,12 @@ export class AuthService {
   }
 
   logout(): void {
-    this.currentUser.set(null);
+    this.clearSession();
     localStorage.removeItem(SESSION_KEY);
+  }
+
+  clearSession(): void {
+    this.currentUser.set(null);
   }
 
   updateLoyaltyPoints(points: number): void {

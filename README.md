@@ -28,6 +28,8 @@ Front-end de um sistema de franquia de alimentação nordestina, desenvolvido co
 | **FR04** | Programa de fidelidade — pontos convertidos em desconto no checkout |
 | **FR05** | Fluxo de pagamento desacoplado com gateway externo simulado |
 | **FR06** | Acompanhamento de pedido em tempo real simulado (Recebido → Cozinha → Pronto) |
+| **FR07** | Promoções e campanhas mockadas na seleção de loja |
+| **FR08** | Minha Conta com exclusão de dados salvos (LGPD art. 18, VI) |
 
 ### Fluxo principal
 
@@ -99,6 +101,7 @@ Estado global gerenciado por serviços singleton com Signals (`providedIn: 'root
 | `/pagamento/:orderId/gateway` | Gateway externo simulado |
 | `/pagamento/:orderId/callback` | Retorno do pagamento |
 | `/pedido/:orderId` | Timeline do pedido |
+| `/conta` | Perfil e exclusão de dados (LGPD) |
 
 ---
 

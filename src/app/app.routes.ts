@@ -73,6 +73,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/order/order-tracking.component').then((m) => m.OrderTrackingComponent),
         canActivate: [lgpdGuard, authGuard]
+      },
+      {
+        path: 'conta',
+        loadComponent: () =>
+          import('./features/account/account-page.component').then((m) => m.AccountPageComponent),
+        canActivate: [lgpdGuard, authGuard]
       }
     ]
   },

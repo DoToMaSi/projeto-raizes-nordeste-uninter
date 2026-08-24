@@ -12,6 +12,11 @@ export class LgpdService {
     () => this.consent()?.dataProcessing === true
   );
 
+  clearConsent(): void {
+    this.consent.set(null);
+    localStorage.removeItem(LGPD_CONSENT_KEY);
+  }
+
   acceptConsent(dataProcessing: boolean, marketing: boolean): void {
     const consent: LgpdConsent = {
       dataProcessing,

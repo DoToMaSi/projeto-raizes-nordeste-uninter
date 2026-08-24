@@ -85,4 +85,11 @@ export class OrderService {
       this.simulationTimers.delete(orderId);
     }
   }
+
+  clearAll(): void {
+    this.simulationTimers.forEach((timers) => timers.forEach((timer) => clearTimeout(timer)));
+    this.simulationTimers.clear();
+    this.orders.set([]);
+    this.activeOrder.set(null);
+  }
 }

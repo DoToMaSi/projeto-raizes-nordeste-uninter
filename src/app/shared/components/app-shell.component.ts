@@ -27,6 +27,7 @@ import { CartService } from '../../core/services/cart.service';
                 <span class="badge badge-secondary badge-sm">{{ cartService.itemCount() }}</span>
               }
             </a>
+            <a routerLink="/conta" routerLinkActive="btn-active" class="btn btn-ghost min-h-11">Conta</a>
             <button type="button" class="btn btn-ghost min-h-11" (click)="logout()">Sair</button>
           } @else {
             <a routerLink="/auth/login" routerLinkActive="btn-active" class="btn btn-ghost min-h-11">
@@ -55,6 +56,9 @@ import { CartService } from '../../core/services/cart.service';
                 cartService.itemCount()
               }}</span>
             }
+          </a>
+          <a routerLink="/conta" routerLinkActive="active" class="min-h-11">
+            <span class="btm-nav-label text-xs">Conta</span>
           </a>
         </nav>
       }

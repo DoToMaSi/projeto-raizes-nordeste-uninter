@@ -14,7 +14,7 @@ import { StoreService } from '../../core/services/store.service';
   imports: [RouterLink, CurrencyPipe],
   template: `
     <div class="flex flex-col gap-6">
-      <h1 class="text-2xl font-bold">Checkout</h1>
+      <h1 class="text-2xl font-bold">Finalização do pedido</h1>
 
       @if (cartService.items().length === 0) {
         <div class="alert alert-warning">

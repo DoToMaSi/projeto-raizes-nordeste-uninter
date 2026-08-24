@@ -79,6 +79,14 @@ export class MockApiService {
     );
   }
 
+  removeRegisteredUserByEmail(email: string): void {
+    const normalized = email.toLowerCase();
+    this.registeredUsers.update((users) =>
+      users.filter((entry) => entry.email.toLowerCase() !== normalized)
+    );
+    this.persistRegisteredUsers(this.registeredUsers());
+  }
+
   private loadRegisteredUsers(): User[] {
     const stored = localStorage.getItem(REGISTERED_USERS_KEY);
     if (!stored) {
